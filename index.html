@@ -134,6 +134,62 @@
     // Console table
     const consoleTable = errorBtns[9];
 
+    // Trigger global error
+    const trigger = errorBtns[10];
+
+    // add event listeners on click for all buttons
+
+    let out = document.querySelector('output');
+
+    // Console Log
+    consoleLog.addEventListener('click', function() {
+      console.log(out.innerText);
+    });
+
+    // Console error
+    consoleError.addEventListener('click', function() {
+      console.error('ERROR');
+    });
+    
+    // Console count
+    consoleCount.addEventListener('click', function() {
+      console.count('Times clicked: ');
+    });
+    // Console warn
+    consoleWarn.addEventListener('click', function() {
+      console.warn('WARNING');
+    });
+
+    // Console assert
+    consoleAssert.addEventListener('click', function() {
+      console.assert(false, 'FAILED');
+    });
+
+    // Console clear
+    consoleClear.addEventListener('click', function() {
+
+    });
+
+    // Console dir
+    consoleDir.addEventListener('click', function() {
+
+    });
+
+    // COnsole group Start
+    consoleGroupStart.addEventListener('click', function() {
+
+    });
+
+    // Console group end
+    consoleGroupEnd.addEventListener('click', function() {
+
+    });
+
+    // Console table
+    consoleTable.addEventListener('click', function() {
+
+    });
+
 
 
   </script>

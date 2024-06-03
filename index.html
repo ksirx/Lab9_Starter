@@ -125,17 +125,30 @@
     // Console dir
     const consoleDir = errorBtns[6];
 
+     // Console dirXML
+     const consoleDirXML = errorBtns[7];
+
     // COnsole group Start
-    const consoleGroupStart = errorBtns[7];
+    const consoleGroupStart = errorBtns[8];
 
     // Console group end
-    const consoleGroupEnd = errorBtns[8];
+    const consoleGroupEnd = errorBtns[9];
 
     // Console table
-    const consoleTable = errorBtns[9];
+    const consoleTable = errorBtns[10];
+
+    // Start timer
+    const startTimer = errorBtns[11];
+
+    // End timer
+    const endTimer = errorBtns[12];
+
+    // Console trace
+    const consoleTrace = errorBtns[13];
 
     // Trigger global error
-    const trigger = errorBtns[10];
+    const trigger = errorBtns[14];
+
 
     // add event listeners on click for all buttons
 
@@ -167,30 +180,78 @@
 
     // Console clear
     consoleClear.addEventListener('click', function() {
-
+        console.clear();
     });
 
     // Console dir
     consoleDir.addEventListener('click', function() {
-
+      console.dir(form);
     });
 
-    // COnsole group Start
-    consoleGroupStart.addEventListener('click', function() {
+    // Console dirxml
+    consoleDirXML.addEventListener('click', function() {
+      console.dirxml(form);
+    });
 
+    // Console group Start
+    consoleGroupStart.addEventListener('click', function() {
+      console.group('Group');
     });
 
     // Console group end
     consoleGroupEnd.addEventListener('click', function() {
-
+      console.groupEnd();
     });
 
     // Console table
     consoleTable.addEventListener('click', function() {
-
+        console.table([9,8,7,6,5,4,3,2,1]);
     });
 
+    // Start timer
+    startTimer.addEventListener('click', function() {
+      console.time();
+    });
 
+     // End timer
+     endTimer.addEventListener('click', function() {
+      console.timeEnd();
+    });
+
+    // Console trace
+    consoleTrace.addEventListener('click', function() {
+      console.trace();
+    });
+
+    // Try, catch, and finally
+    try {
+      // not a valid query
+      document.querySelector(output);;
+    } catch (err) {
+      console.log('caught error');
+    } finally {
+      console.log('above is true');
+    }
+
+    // Custom errors
+    class InvalidInputError extends Error {
+      constructor(message) {
+        super(message);
+        this.name = "InvalidInputError";
+      }
+    }
+
+    function noLoggingNumbers(input) {
+      if(typeof input === 'number') {
+        throw new InvalidInputError('input was a number');
+      } else {
+        console.log(input);
+      }
+    }
+
+    // Global Error Handler
+
+    
 
   </script>
 </body>

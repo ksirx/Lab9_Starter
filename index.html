@@ -87,6 +87,14 @@
     </section>
   </main>
 
+  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+  <script>
+    window.TrackJS && TrackJS.install({ 
+      token: "631525fed0154e08b6f1e5a2d8a8c258"
+      // for more configuration options, see https://docs.trackjs.com
+    });
+  </script>
+                        
   <script>
     let form = document.querySelector('form');
     form.addEventListener('submit', e => {
@@ -213,8 +221,8 @@
       console.time();
     });
 
-     // End timer
-     endTimer.addEventListener('click', function() {
+    // End timer
+    endTimer.addEventListener('click', function() {
       console.timeEnd();
     });
 
@@ -250,8 +258,14 @@
     }
 
     // Global Error Handler
+    trigger.addEventListener('click', function() {
+      try {
+        noLoggingNumbers(0);
+      } catch (err) {
+        console.log(err.message);
 
-    
+      }
+    });
 
   </script>
 </body>
